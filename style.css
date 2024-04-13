@@ -1,5 +1,244 @@
-*{
-    margin: 0;
-    padding: 0;
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+* {
     box-sizing: border-box;
+}
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --light-grayish-violet: hsl(270, 3%, 87%);
+    --dark-grayish-violet: hsl(279, 6%, 55%);
+    --very-dark-violet: hsl(278, 68%, 11%);
+    --red: hsl(0, 100%, 66%);
+}
+
+@font-face {
+    font-family: "Space Grotesk";
+    src: url("./SpaceGrotesk-VariableFont_wght.ttf") format("TrueType");
+}
+
+body {
+    font-family: "Space Grotesk";
+    min-height: 100vh;
+    font-size: 18px;
+    margin: 0;
+}
+
+.card-front {
+    background: url("./images/bg-card-front.png");
+    top: 20%;
+    left: 20%;
+    z-index: 100;
+}
+
+.card-back {
+    background: url("./images/bg-card-back.png");
+    top: 50%;
+    left: 25%;
+    z-index: 50;
+}
+
+label,
+input {
+    display: block;
+}
+
+#confirm-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem 0.5rem;
+    font-size: 18px;
+    font-family: "Space Grotesk";
+    background-color: var(--very-dark-violet);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form {
+    width: 100%;
+    min-width: 400px;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-row input {
+    width: 4rem;
+}
+
+#date {
+    gap: 3%;
+}
+
+input {
+    padding: 0.5rem;
+    padding-right: 0;
+    width: 100%;
+    font-size: 18px;
+    font-family: "Space Grotesk";
+}
+
+input:focus {
+    border-image: linear-gradient(hsl(249, 99%, 64%), hsl(278, 94%, 30%)) 20 stretch;
+    outline: none;
+}
+
+.card {
+    background-repeat: no-repeat;
+    padding: 1rem;
+    min-width: 447px;
+    min-height: 245px;
+    border-radius: 8px;
+    color: white;
+    position: absolute;
+    box-shadow: 1px 1px 3rem black;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+main {
+    display: flex;
+    min-width: 100%;
+}
+
+#form-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20%;
+    width: 30%;
+}
+
+#card-background {
+    background-image: url("./images/bg-main-desktop.png");
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 40vw;
+    padding-left: 15rem;
+}
+
+#cvc {
+    width: 100%;
+    display: inline-block;
+}
+
+#cvc-container {
+    position: absolute;
+    top: 45%;
+    left: 12%;
+}
+
+.input-container {
+    margin-bottom: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+#success-dialog {
+    text-align: center;
+}
+
+#continue-btn {
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    background-color: var(--very-dark-violet);
+    padding: 0.8rem;
+    color: white;
+    font-size: 18px;
+    font-family: "Space Grotesk";
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.error {
+    color: var(--red);
+}
+
+@media only screen and (max-width:1350px) {
+    .card {
+        transform: scale(0.8);
+    }
+
+    .card-front {
+        left: 10%;
+    }
+
+    .card-back {
+        left: 20%;
+    }
+}
+
+@media only screen and (max-width:1100px) {
+    .card {
+        transform: scale(0.6);
+    }
+
+    .card-front {
+        top: 20%;
+        left: 10%;
+    }
+
+    .card-back {
+        top: 45%;
+        left: 15%;
+    }
+
+    #card-background {
+        padding-left: 0;
+    }
+}
+
+@media only screen and (max-width:1000px) {
+    main {
+        flex-direction: column;
+    }
+
+    .card-front {
+        top: 5.3rem;
+        left: -10%;
+    }
+
+    .card-back {
+        top: 0rem;
+        left: 0%;
+    }
+
+    #card-background {
+        background-image: url("./images/bg-main-mobile.png");
+        padding-left: 0;
+        min-height: 250px;
+    }
+
+    #form-container {
+        display: block;
+        margin-top: 3rem;
+        margin-left: 0;
+    }
+
+    form {
+        max-width: 100%;
+        min-width: 90vw;
+    }
+
+    #cvc {
+        width: 100%;
+    }
+
+    #exp-date {
+        min-width: max-content;
+    }
 }

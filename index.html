@@ -1,51 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive card details form</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <title>Frontend Mentor | Interactive card details form</title>
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
-
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div id="card-background">
+        <div class="card card-front">
+          <img src="./images/card-logo.svg" alt="card-logo"/>
+          <h1 id="card-number">0000 0000 0000 0000</h1>
+          <div class="flex-row">
+            <span id="holder-name-text">Jane Appleseed</span>
+            <span id="exp-date">00/00</span>
+          </div>
+        </div>
+        <div class="card card-back">
+          <div id="cvc-container">
+            <span id="cvc-text">000</span>
+          </div>
+        </div>
+      </div>
+      <div id="form-container">
+        <form method="get" id="card-form" class="">
+          <div class="input-container">
+            <label class="uppercase" for="holder-name-input"
+              >Cardholder Name</label
+            >
+            <input
+              class=""
+              id="holder-name-input"
+              placeholder="e.g. Jane Appleseed"
+              type="text"
+            />
+            <span id="holder-error" class="error"></span>
+          </div>
+          <div class="input-container">
+            <label class="uppercase" for="card-number-input">Card Number</label>
+            <input
+              class=""
+              id="card-number-input"
+              type="text"
+              inputmode="number"
+              placeholder="e.g. 1234 5678 9123 0000"
+            />
+            <span id="number-error" class="error"></span>
+          </div>
+          <div class="flex-row input-container">
+            <div id="exp-date">
+              <label class="uppercase" for="date">Exp. Date (MM/YY)</label>
+              <div class="flex-row" id="date">
+                <input
+                  class="uppercase"
+                  type="text"
+                  maxlength="2"
+                  placeholder="MM"
+                  name="month"
+                  id="month"
+                />
+                <input
+                  class=""
+                  type="text"
+                  maxlength="2"
+                  placeholder="YY"
+                  name="year"
+                  id="year"
+                />
+              </div>
+              <span id="date-error" class="error"></span>
+            </div>
+            <div>
+              <label class="uppercase" for="cvc">CVC</label>
+              <input
+                class=""
+                type="text"
+                name=""
+                id="cvc"
+                placeholder="e.g. 123"
+              />
+              <span id="cvc-error" class="error"></span>
+            </div>
+          </div>
+          <button type="submit" id="confirm-btn">Confirm</button>
+        </form>
+        <div id="success-dialog" class="hidden">
+          <img src="./images/icon-complete.svg" alt="icon"/>
+          <h2 class="uppercase" id="thanks">Thank you!</h2>
+          <span class="message">We've added your card details</span>
+          <button id="continue-btn">Continue</button>
+        </div>
+      </div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
 </html>
